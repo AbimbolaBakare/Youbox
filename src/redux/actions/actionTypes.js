@@ -1,0 +1,7 @@
+export const appConstants ={
+    SIGN_IN_WITH_GOOGLE: 'SIGN_IN_WITH_GOOGLE',
+
+    FETCH_ONE_VIDEO: 'FETCH_ONE_VIDEO',
+
+    FETCH_USER_VIDEO: 'FETCH_USER_VIDEO'
+}
