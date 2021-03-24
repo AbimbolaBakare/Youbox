@@ -8,6 +8,7 @@ import { openUploadWidget } from '../service/cloudinary/cloudinaryService';
 import { getUserVideos, uploadVideo } from '../service/videoUploadService';
 import { toast } from 'react-toastify';
 import { fetchUserVideoAction } from '../redux/actions/video/videoActions';
+import { Footer } from '../components/Footer';
 
 export const Dashboard = () => {
     const dispatch = useDispatch();
@@ -130,6 +131,7 @@ export const Dashboard = () => {
                                                         }
 
                                                     </div>
+                                                    <small>Maximum fil upload size is 10MB</small>
                                                 </div>
                                                 <div className="modal-footer">
                                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -179,8 +181,8 @@ export const Dashboard = () => {
                                                     :
                                                     ''
                                                 }
-
                                             </div>
+                                            <small>Maximum file upload size is 10MB</small>
                                         </div>
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -221,6 +223,7 @@ export const Dashboard = () => {
                 }
 
             </section>
+            <Footer/>
         </CloudinaryContext>
     )
 }

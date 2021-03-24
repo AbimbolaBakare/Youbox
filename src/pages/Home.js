@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { getAllVideos } from '../service/videoUploadService';
 
@@ -32,6 +33,8 @@ export const Home = () => {
                 <h1 className="text-dark" data-aos="fade-up">YOUBOX</h1>
 
                 <h5 data-aos="fade-up" data-aos-delay="100">Giving youtube a run for their money 😜</h5>
+                <img src='/images/googleplay.png' alt='google' className='img-fluid' width='200'/>
+                <img src='/images/app-store.png' alt='google' className='img-fluid' width='200'/>
               </div>
             </div>
 
@@ -70,7 +73,7 @@ export const Home = () => {
 
         </div>
       </div>
-
+<Footer/>
     </>
   )
 };

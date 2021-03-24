@@ -6,6 +6,7 @@ import { fetchOneVideoAction } from '../redux/actions/video/videoActions';
 import { addComment, incrementLikes } from '../service/videoActivitiesService';
 import { getOneVideo } from '../service/videoUploadService';
 import { toast } from 'react-toastify';
+import { Footer } from '../components/Footer';
 
 export const WatchVideo = (props) => {
     const dispatch = useDispatch();
@@ -82,7 +83,7 @@ export const WatchVideo = (props) => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-lg-12'>
-                        <video controls className='one-video'>
+                        <video controls className='one-video' autoPlay>
                             <source src={oneVideo.video} type="video/mp4" />
                         </video>
                     </div>
@@ -125,6 +126,7 @@ export const WatchVideo = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
