@@ -80,53 +80,60 @@ export const WatchVideo = (props) => {
     return (
         <div>
             <Navigation />
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-lg-12'>
-                        <video controls className='one-video' autoPlay>
-                            <source src={oneVideo.video} type="video/mp4" />
-                        </video>
-                    </div>
+            {oneVideo ?
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-lg-12'>
+                            <video controls className='one-video' autoPlay>
+                                <source src={oneVideo.video} type="video/mp4" />
+                            </video>
+                        </div>
 
-                    <div className='col-lg-12 mb-3'>
-                        <h4 className='d-inline'>{oneVideo.name}</h4>
-                        <span className='ml-5 font-weight-bolder'>{oneVideo.likes} likes</span>
-                        <span className='ml-5'><button onClick={() => increment(1)} className='btn btn-success'>Like this video</button></span>
-                        <span className='ml-5'><button onClick={copyVideoLink} className='btn btn-primary'>Copy video link</button></span>
-                    </div>
-                    <div className='col-lg-12'>
-                        <textarea onChange={handleChange} name='comment' value={data.comment} placeholder='Add a comment' rows='2' className='w-75' />
-                        { }
-                        <button className='btn btn-primary ml-5' onClick={submitComment}>
-                            {isLoading === true ? <Loader /> : 'Submit Comment'}
-                        </button>
-                    </div>
+                        <div className='col-lg-12 mb-3'>
+                            <h4 className='d-inline'>{oneVideo.name}</h4>
+                            <span className='ml-5 font-weight-bolder'>{oneVideo.likes} likes</span>
+                            <span className='ml-5'><button onClick={() => increment(1)} className='btn btn-success'>Like this video</button></span>
+                            <span className='ml-5'><button onClick={copyVideoLink} className='btn btn-primary'>Copy video link</button></span>
+                        </div>
+                        <div className='col-lg-12'>
+                            <textarea onChange={handleChange} name='comment' value={data.comment} placeholder='Add a comment' rows='2' className='w-75' />
+                            { }
+                            <button className='btn btn-primary ml-5' onClick={submitComment}>
+                                {isLoading === true ? <Loader /> : 'Submit Comment'}
+                            </button>
+                        </div>
 
-                    <div className='col-lg-12'>
-                        {oneVideo.comments && oneVideo.comments.length === 0 || oneVideo.comments === undefined ?
-                            <div>
-                                <p>No comments yet. Add a comment in the textbox above</p>
-                            </div>
-                            :
-                            <div>
-                                {oneVideo.comments && oneVideo.comments.map((comment, i) => {
-                                    return (
-                                        <div key={i} className='mb-3' style={{ borderBottom: '1px solid #ccc' }}>
-                                            <p className='m-0 text-capitalize d-inline font-weight-bolder'>{comment.by}</p>
-                                            <p className='d-inline ml-3 font-weight-bolder'>{comment.createdAt}</p>
-                                            <p className='text-capitalize m-0'>{comment.comment}</p>
-                                        </div>
+                        <div className='col-lg-12'>
+                            {oneVideo.comments && oneVideo.comments.length === 0 || oneVideo.comments === undefined ?
+                                <div>
+                                    <p>No comments yet. Add a comment in the textbox above</p>
+                                </div>
+                                :
+                                <div>
+                                    {oneVideo.comments && oneVideo.comments.map((comment, i) => {
+                                        return (
+                                            <div key={i} className='mb-3' style={{ borderBottom: '1px solid #ccc' }}>
+                                                <p className='m-0 text-capitalize d-inline font-weight-bolder'>{comment.by}</p>
+                                                <p className='d-inline ml-3 font-weight-bolder'>{comment.createdAt}</p>
+                                                <p className='text-capitalize m-0'>{comment.comment}</p>
+                                            </div>
 
-                                    )
-                                })
+                                        )
+                                    })
 
-                                }
-                            </div>
-                        }
+                                    }
+                                </div>
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-            <Footer/>
+                :
+                <div className='mt-5 '>
+                    <h5 className='text-center mt-3'>This video does not exist</h5>
+                </div>
+
+            }
+            <Footer />
         </div>
     )
 }
