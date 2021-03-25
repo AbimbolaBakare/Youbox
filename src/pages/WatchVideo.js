@@ -84,7 +84,7 @@ export const WatchVideo = (props) => {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-lg-12'>
-                            <video controls className='one-video' autoPlay>
+                            <video src={oneVideo.video} controls autoPlay className='one-video' >
                                 <source src={oneVideo.video} type="video/mp4" />
                             </video>
                         </div>

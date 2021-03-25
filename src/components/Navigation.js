@@ -21,7 +21,7 @@ export const Navigation = () => {
     // Function to logout
     function logout() {
         localStorage.clear()
-        toast.succes('Logout successful')
+        toast.success('Logout successful')
     }
 
 
@@ -30,7 +30,7 @@ export const Navigation = () => {
         <div className="topnav">
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a className="navbar-brand" href="index.html">
+                    <a className="navbar-brand" href="/">
                         <i className="fa fa-play"></i>
                             YOUBOX
                         </a>
