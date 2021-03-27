@@ -55,7 +55,7 @@ export const Home = () => {
             return (
               <Link to={`watch/${vid.id}`} className='col-lg-4 text-center mb-5' key={i}>
 
-                <video preload="metdata" className='video'>
+                <video src={vid.video} preload="metadata" className='video'>
                   <source src={vid.video} type="video/mp4" />
                 </video>
 
