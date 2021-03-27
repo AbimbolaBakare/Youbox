@@ -69,6 +69,9 @@ export const Navigation = () => {
                                 <li className='nav-item'><a className='nav-link'>{user.displayName}</a></li>
                             }
 
+                            <li className='nav-item'>
+                                <a target="_blank" rel="noreferrer" href='https://github.com/AbimbolaBakare/Youbox' className='nav-link'> <i className="fa fa-github github"></i></a>
+                            </li>
 
                         </ul>
                     </div>
